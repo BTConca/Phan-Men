@@ -1,0 +1,44 @@
+C:\Users\VanKhai\Desktop\Sort\Quick Note\Sources\QuickNote\Shape\obj\Debug\Shape.csprojResolveAssemblyReference.cache
+C:\Users\VanKhai\Desktop\Sort\Quick Note\Sources\QuickNote\Shape\obj\Debug\Shape.GUI.fNote.resources
+C:\Users\VanKhai\Desktop\Sort\Quick Note\Sources\QuickNote\Shape\obj\Debug\Shape.Gui.fMenu.resources
+C:\Users\VanKhai\Desktop\Sort\Quick Note\Sources\QuickNote\Shape\obj\Debug\Shape.GUI.Form3.resources
+C:\Users\VanKhai\Desktop\Sort\Quick Note\Sources\QuickNote\Shape\obj\Debug\Shape.GUI.fListNotes.resources
+C:\Users\VanKhai\Desktop\Sort\Quick Note\Sources\QuickNote\Shape\obj\Debug\Shape.Properties.Resources.resources
+C:\Users\VanKhai\Desktop\Sort\Quick Note\Sources\QuickNote\Shape\obj\Debug\Shape.csproj.GenerateResource.cache
+C:\Users\VanKhai\Desktop\Sort\Quick Note\Sources\QuickNote\Shape\obj\Debug\Shape.csproj.CoreCompileInputs.cache
+C:\Users\VanKhai\Desktop\Sort\Quick Note\Sources\QuickNote\Shape\bin\Debug\Note.mdf
+C:\Users\VanKhai\Desktop\Sort\Quick Note\Sources\QuickNote\Shape\bin\Debug\Note_log.ldf
+C:\Users\VanKhai\Desktop\Sort\Quick Note\Sources\QuickNote\Shape\bin\Debug\Shape.exe.config
+C:\Users\VanKhai\Desktop\Sort\Quick Note\Sources\QuickNote\Shape\bin\Debug\Shape.exe
+C:\Users\VanKhai\Desktop\Sort\Quick Note\Sources\QuickNote\Shape\bin\Debug\Shape.pdb
+C:\Users\VanKhai\Desktop\Sort\Quick Note\Sources\QuickNote\Shape\obj\Debug\Shape.exe
+C:\Users\VanKhai\Desktop\Sort\Quick Note\Sources\QuickNote\Shape\obj\Debug\Shape.pdb
+C:\Users\Jack_Rambo\Desktop\PTKPM\QuickNote\Shape\bin\Debug\Shape.exe.config
+C:\Users\Jack_Rambo\Desktop\PTKPM\QuickNote\Shape\obj\Debug\Shape.exe
+C:\Users\Jack_Rambo\Desktop\PTKPM\QuickNote\Shape\obj\Debug\Shape.pdb
+C:\Users\Jack_Rambo\Desktop\PTKPM\QuickNote\Shape\obj\Debug\Shape.csprojResolveAssemblyReference.cache
+C:\Users\Jack_Rambo\Desktop\PTKPM\QuickNote\Shape\obj\Debug\Shape.GUI.fNote.resources
+C:\Users\Jack_Rambo\Desktop\PTKPM\QuickNote\Shape\obj\Debug\Shape.GUI.fMenu.resources
+C:\Users\Jack_Rambo\Desktop\PTKPM\QuickNote\Shape\obj\Debug\Shape.GUI.fListNotes.resources
+C:\Users\Jack_Rambo\Desktop\PTKPM\QuickNote\Shape\obj\Debug\Shape.GUI.fTag.resources
+C:\Users\Jack_Rambo\Desktop\PTKPM\QuickNote\Shape\obj\Debug\Shape.Properties.Resources.resources
+C:\Users\Jack_Rambo\Desktop\PTKPM\QuickNote\Shape\obj\Debug\Shape.csproj.GenerateResource.Cache
+C:\Users\Jack_Rambo\Desktop\PTKPM\QuickNote\Shape\bin\Debug\Note.mdf
+C:\Users\Jack_Rambo\Desktop\PTKPM\QuickNote\Shape\bin\Debug\Note_log.ldf
+C:\Users\Jack_Rambo\Desktop\PTKPM\QuickNote\Shape\bin\Debug\Shape.exe
+C:\Users\Jack_Rambo\Desktop\PTKPM\QuickNote\Shape\bin\Debug\Shape.pdb
+C:\Users\VanKhai\Desktop\TKPM\Ver2\PTKPM\QuickNote\Shape\bin\Debug\Note.mdf
+C:\Users\VanKhai\Desktop\TKPM\Ver2\PTKPM\QuickNote\Shape\bin\Debug\Note_log.ldf
+C:\Users\VanKhai\Desktop\TKPM\Ver2\PTKPM\QuickNote\Shape\bin\Debug\Shape.exe.config
+C:\Users\VanKhai\Desktop\TKPM\Ver2\PTKPM\QuickNote\Shape\bin\Debug\Shape.exe
+C:\Users\VanKhai\Desktop\TKPM\Ver2\PTKPM\QuickNote\Shape\bin\Debug\Shape.pdb
+C:\Users\VanKhai\Desktop\TKPM\Ver2\PTKPM\QuickNote\Shape\obj\Debug\Shape.GUI.fNote.resources
+C:\Users\VanKhai\Desktop\TKPM\Ver2\PTKPM\QuickNote\Shape\obj\Debug\Shape.GUI.fMenu.resources
+C:\Users\VanKhai\Desktop\TKPM\Ver2\PTKPM\QuickNote\Shape\obj\Debug\Shape.GUI.fListNotes.resources
+C:\Users\VanKhai\Desktop\TKPM\Ver2\PTKPM\QuickNote\Shape\obj\Debug\Shape.GUI.fTag.resources
+C:\Users\VanKhai\Desktop\TKPM\Ver2\PTKPM\QuickNote\Shape\obj\Debug\Shape.Properties.Resources.resources
+C:\Users\VanKhai\Desktop\TKPM\Ver2\PTKPM\QuickNote\Shape\obj\Debug\Shape.csproj.GenerateResource.cache
+C:\Users\VanKhai\Desktop\TKPM\Ver2\PTKPM\QuickNote\Shape\obj\Debug\Shape.csproj.CoreCompileInputs.cache
+C:\Users\VanKhai\Desktop\TKPM\Ver2\PTKPM\QuickNote\Shape\obj\Debug\Shape.exe
+C:\Users\VanKhai\Desktop\TKPM\Ver2\PTKPM\QuickNote\Shape\obj\Debug\Shape.pdb
+C:\Users\VanKhai\Desktop\TKPM\Ver2\PTKPM\QuickNote\Shape\obj\Debug\Shape.csprojAssemblyReference.cache
