@@ -66,12 +66,15 @@ namespace Shape.MO
 
             if (!(existFile))
             {
-
-                f_note = File.Create(filepath);
-                f_note.Close();
-                _sw = new StreamWriter(filepath);
-                _sw.Write(_noiDung);
-                _sw.Close();
+                if (MessageBox.Show("Ban có muốn SAVE FILE không?", "Exit", MessageBoxButtons.YesNo) ==
+    System.Windows.Forms.DialogResult.Yes)
+                {
+                    f_note = File.Create(filepath);
+                    f_note.Close();
+                    _sw = new StreamWriter(filepath);
+                    _sw.Write(_noiDung);
+                    _sw.Close();
+                }
             }
             else
             {

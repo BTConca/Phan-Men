@@ -45,6 +45,7 @@ namespace Shape.GUI
         }
 
         string currentDirectory = Environment.CurrentDirectory;
+        ListViewItem mtag;
         private void LoadTags(int a)
         {
             
@@ -58,12 +59,13 @@ namespace Shape.GUI
             string notepath;
             tags = Directory.GetDirectories(path);
             listTagNote.Clear();
+            
             foreach (string item in tags)
             {
-                ListViewItem mtag = new ListViewItem();
+                mtag = new ListViewItem();
 
               
-               mtag.Tag = item;
+               mtag.Tag = new FileInfo(item).FullName;
                if (a == 1)
                {
                    mtag.Text = Path.GetFileName(item);
@@ -109,10 +111,10 @@ namespace Shape.GUI
         }
 
 
-
+        
         private void listTagNote_DoubleClick(object sender, EventArgs e)
         {
-            ListViewItem mtag = new ListViewItem();
+            mtag = new ListViewItem();
             string selectedFile = listTagNote.SelectedItems[0].Text;
             string[] notes;
             string tag = (string)listTagNote.SelectedItems[0].Tag;
@@ -135,12 +137,12 @@ namespace Shape.GUI
             {
                 listTagNote.Clear();
                 notes = Directory.GetFiles(notepath);
-
                 foreach (string note in notes)
                 {
                     mtag.Text = Path.GetFileName(note);
-                    mtag.Tag = tag;
-                    listTagNote.Items.Add(mtag);
+                    mtag.Tag = new FileInfo(tag).FullName;
+                    
+                    listTagNote.Items.Add((ListViewItem)mtag.Clone());
                     mtag.ImageIndex++;
                 }
             }

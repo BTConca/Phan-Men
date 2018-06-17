@@ -101,6 +101,7 @@
             this.txt_ChonMauNote.Size = new System.Drawing.Size(251, 35);
             this.txt_ChonMauNote.TabIndex = 9;
             this.txt_ChonMauNote.Text = "Chọn một mẫu note";
+            this.txt_ChonMauNote.Visible = false;
             // 
             // bg_note4
             // 

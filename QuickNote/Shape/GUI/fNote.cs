@@ -123,6 +123,7 @@ namespace Shape.GUI
                 double size;
                 float size1;
                 string text;
+                
                 FontStyle style;
                 ofd.Filter = "TXT | *.txt";
                 sr = new StreamReader(ofd.FileName);
@@ -130,7 +131,11 @@ namespace Shape.GUI
                 txt_note.Text = text;
                 string lastFolderName = Path.GetFileName(Path.GetDirectoryName(ofd.FileName));
                 lbTenTag.Text = lastFolderName;
-                txt_TieuDe.Text = Path.GetFileName(ofd.FileName);
+
+                string path_tieuDe = Path.GetFileName(ofd.FileName);
+                string tieuDe = path_tieuDe.Substring(0, path_tieuDe.Length - 4);
+                txt_TieuDe.Text = tieuDe;
+                
                 sr.Close();
             }
         }
@@ -141,7 +146,9 @@ namespace Shape.GUI
             txt_note.Text = text;
             string lastFolderName = Path.GetFileName(Path.GetDirectoryName(path));
             lbTenTag.Text = lastFolderName;
-            txt_TieuDe.Text = Path.GetFileName(path);
+            string path_tieuDe = Path.GetFileName(path);
+            string tieuDe = path_tieuDe.Substring(0, path_tieuDe.Length - 4);
+            txt_TieuDe.Text = tieuDe;
         }
         private void label1_Click(object sender, EventArgs e)
         {
