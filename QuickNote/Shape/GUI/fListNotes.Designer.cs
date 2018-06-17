@@ -38,6 +38,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.btn_Exit = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button2
@@ -46,7 +47,7 @@
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button2.Font = new System.Drawing.Font("Monotype Corsiva", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Location = new System.Drawing.Point(175, 22);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(52, 30);
             this.button2.TabIndex = 1;
@@ -63,7 +64,7 @@
             this.listTagNote.GridLines = true;
             this.listTagNote.LargeImageList = this.Tag;
             this.listTagNote.Location = new System.Drawing.Point(17, 56);
-            this.listTagNote.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listTagNote.Margin = new System.Windows.Forms.Padding(2);
             this.listTagNote.Name = "listTagNote";
             this.listTagNote.Size = new System.Drawing.Size(224, 279);
             this.listTagNote.SmallImageList = this.Tag;
@@ -96,7 +97,7 @@
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button1.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(80, 21);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(52, 30);
             this.button1.TabIndex = 0;
@@ -111,7 +112,7 @@
             this.textBox1.Font = new System.Drawing.Font("Showcard Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.textBox1.Location = new System.Drawing.Point(14, 28);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(66, 17);
             this.textBox1.TabIndex = 3;
@@ -124,25 +125,41 @@
             this.textBox2.Font = new System.Drawing.Font("Showcard Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox2.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.textBox2.Location = new System.Drawing.Point(142, 28);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(27, 17);
             this.textBox2.TabIndex = 4;
             this.textBox2.Text = "Or";
+            // 
+            // btn_Exit
+            // 
+            this.btn_Exit.AutoSize = true;
+            this.btn_Exit.BackColor = System.Drawing.Color.White;
+            this.btn_Exit.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.btn_Exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 19F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Exit.ForeColor = System.Drawing.Color.Purple;
+            this.btn_Exit.Location = new System.Drawing.Point(503, -1);
+            this.btn_Exit.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.btn_Exit.Name = "btn_Exit";
+            this.btn_Exit.Size = new System.Drawing.Size(27, 32);
+            this.btn_Exit.TabIndex = 10;
+            this.btn_Exit.Text = "x";
+            this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click);
             // 
             // fListNotes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(532, 349);
+            this.Controls.Add(this.btn_Exit);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.listTagNote);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "fListNotes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "ListNotes";
@@ -161,5 +178,6 @@
         private System.Windows.Forms.ImageList Note;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label btn_Exit;
     }
 }

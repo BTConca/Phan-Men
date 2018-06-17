@@ -21,8 +21,7 @@ namespace Shape.GUI
         {
             InitializeComponent();
             oder = x;
-            bg_Note.Visible = false;
-            UnHideBG();
+
 
         }
         public fNote(int x,string path)
@@ -65,6 +64,11 @@ namespace Shape.GUI
             System.DateTime.Now.ToLocalTime().ToString("dd/MM/yyyy  hh:mm:ss tt");
 
             timer1.Start();
+            if(oder == 0)
+            {
+                bg_Note.Visible = false;
+                UnHideBG();
+            }
             if (oder == 1)
             {
                 readNote();
@@ -183,10 +187,7 @@ namespace Shape.GUI
 
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
 
-        }
 
 
         private void panel2_MouseDown(object sender, MouseEventArgs e)
@@ -305,6 +306,9 @@ namespace Shape.GUI
             bg_note1.Hide();
             bg_note2.Hide();
             bg_note3.Hide();
+            back_Ground.Hide();
+            bg_note4.Hide();
+            txt_ChonMauNote.Hide();
             bg_Note.Visible = true;
         }
         private void UnHideBG()
@@ -313,7 +317,24 @@ namespace Shape.GUI
             bg_note1.Visible = true;
             bg_note2.Visible = true;
             bg_note3.Visible = true;
-            
+            bg_note4.Visible = true;
+            back_Ground.Visible = true;
+            txt_ChonMauNote.Visible = true;
+
+        }
+
+        private void bg_note4_Click(object sender, EventArgs e)
+        {
+            Image myimage = new Bitmap(@"Resources/Sticky Note Background.jpg");
+            if (myimage == null)
+            {
+                MessageBox.Show("Không có Resources");
+            }
+            else
+            {
+                note_model.Image = myimage;
+                HideBG();
+            }
         }
 
 

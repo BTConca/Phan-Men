@@ -213,6 +213,16 @@ namespace Shape.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap QuickNoteTitle {
+            get {
+                object obj = ResourceManager.GetObject("QuickNoteTitle", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap quite {
             get {
                 object obj = ResourceManager.GetObject("quite", resourceCulture);
