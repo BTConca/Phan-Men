@@ -1,58 +1,49 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using System.IO;
 using System.Text;
 using System.Windows.Forms;
 using System.Collections.Generic;
 
-namespace Shape.MO
+namespace Shape.DTO
 {
 
-    class Note
+    public class Note
     {
-        string _tieuDe { get; set; }
-        string _noiDung { get; set; }
-        DateTime _thoiGianTao { get; set; }
-        string[] _loaiTag { get; set; }
-        bool _saoDanhDau { get;set;}
-
+        public string[] _loaiTag1 { get; set; }
+        public bool _saoDanhDau { get;set;}
+        public int _maNote { get; set; }
+        public  string _tieuDe { get; set; }
+        public string _noiDung { get; set; }
+        public DateTime _thoiGianTao { get; set; }
+        public string _loaiTag { get; set; }
+        public  string _font { get; set; }
+        public string _thoiGianThongBao { get; set; }
+        public string _ngayChinhSuaGanNhat { get; set; }
+        public string _path { get; set; }
+        public DateTime _thoiGianTao1 { get; set; }
         StreamWriter _sw;
         StreamReader _sr;
         FileStream f_note;
-
+        string currentDirectory = Environment.CurrentDirectory;
+        string filepath;
+        string filename;
         public Note TaoNote(string tieuDe,string text,string tag)
         {
             Note note = new Note();
             string path;
-            string filepath;
-            string filename;
-            string currentDirectory = Environment.CurrentDirectory;
-            string[] separators = { "," };
+
+           
             _noiDung = text;
             _tieuDe = tieuDe;
             //Chia tag
-            if (tag.Length != 0)
-            {
-                _loaiTag = tag.Split(separators, StringSplitOptions.RemoveEmptyEntries);
-                for (int index = 0; index < _loaiTag.Length; index++)
-                {
-                    _loaiTag[index] = _loaiTag[index].Trim();
-                }
-                
 
-            }
-            else
-            {
-                string[] none = { "None" };
-                _loaiTag = none;
-            }
-            //Tao noi dung
-            string item = String.Join( ",", _loaiTag);
+            string item = XuliChuoi(tag, _loaiTag1);
+            //
             path = String.Concat(currentDirectory, "\\", "Data", "\\", item);
             filepath = String.Concat(path,"\\", _tieuDe,".txt");
             
-            _thoiGianTao = System.DateTime.Now.ToLocalTime();
+            _thoiGianTao1 = System.DateTime.Now.ToLocalTime();
 
             bool existFile = File.Exists(filepath);
             bool existDir = File.Exists(path);
@@ -78,8 +69,6 @@ namespace Shape.MO
             }
             else
             {
-
-
                 if (MessageBox.Show("File trùng tên. Bạn có muốn thay thế?", "Exit", MessageBoxButtons.YesNo) ==
     System.Windows.Forms.DialogResult.Yes)
                 {
@@ -91,7 +80,30 @@ namespace Shape.MO
 
                 return note;
         }
+        public string XuliChuoi(string chuoi, string[] loaiTag)
+        {
 
+            string[] separators = { "," };
+           
+            if (chuoi.Length != 0)
+            {
+                loaiTag = chuoi.Split(separators, StringSplitOptions.RemoveEmptyEntries);
+                for (int index = 0; index < loaiTag.Length; index++)
+                {
+                    loaiTag[index] = loaiTag[index].Trim();
+                }
+
+
+            }
+            else
+            {
+                string[] none = { "None" };
+                loaiTag = none;
+            }
+
+            string item = String.Join(",", loaiTag);
+            return item;
+        }
         public bool TuyChinhNote()
         {
             return true;
@@ -114,6 +126,19 @@ namespace Shape.MO
         {
             return true;
         }
-
+        public bool SaveNote(string path,string text)
+        {
+            if (MessageBox.Show("Ban có muốn SAVE FILE không?", "Exit", MessageBoxButtons.YesNo) ==
+System.Windows.Forms.DialogResult.Yes)
+            {
+                _sw = new StreamWriter(path);
+                _sw.Write(text);
+                _sw.Close();
+                return true;
+            }
+            else
+                return false;
+            
+        }
     }
 }

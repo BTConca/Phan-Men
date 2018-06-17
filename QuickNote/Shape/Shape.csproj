@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Shape</RootNamespace>
     <AssemblyName>Shape</AssemblyName>
-    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <UpgradeBackupLocation>
@@ -31,6 +31,7 @@
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -53,12 +54,16 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BUS\NoteBUS.cs" />
+    <Compile Include="DAO\NoteDAO.cs" />
+    <Compile Include="DAO\XL_DULIEU.cs" />
     <Compile Include="GUI\fNote.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,7 +88,11 @@
     <Compile Include="GUI\fTag.Designer.cs">
       <DependentUpon>fTag.cs</DependentUpon>
     </Compile>
-    <Compile Include="MO\Note.cs" />
+    <Compile Include="DAO\DataProvider.cs" />
+    <Compile Include="DTO\Note.cs" />
+    <Compile Include="NoteDataSet.cs">
+      <DependentUpon>NoteDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="NoteDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -202,7 +211,7 @@
     <None Include="Resources\TagGamesLogo_JustTag_WhiteOutline.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="BUS\" />
+    <Folder Include="MO\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Note.mdf">

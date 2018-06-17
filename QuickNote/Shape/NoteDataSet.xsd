@@ -13,7 +13,18 @@
   </xs:annotation>
   <xs:element name="NoteDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="NoteDataSet" msprop:Generator_UserDSName="NoteDataSet">
     <xs:complexType>
-      <xs:choice minOccurs="0" maxOccurs="unbounded" />
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Tag" msprop:Generator_TableClassName="TagDataTable" msprop:Generator_TableVarName="tableTag" msprop:Generator_TablePropName="Tag" msprop:Generator_RowDeletingName="TagRowDeleting" msprop:Generator_RowChangingName="TagRowChanging" msprop:Generator_RowEvHandlerName="TagRowChangeEventHandler" msprop:Generator_RowDeletedName="TagRowDeleted" msprop:Generator_UserTableName="Tag" msprop:Generator_RowChangedName="TagRowChanged" msprop:Generator_RowEvArgName="TagRowChangeEvent" msprop:Generator_RowClassName="TagRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MaNote" msprop:Generator_ColumnVarNameInTable="columnMaNote" msprop:Generator_ColumnPropNameInRow="MaNote" msprop:Generator_ColumnPropNameInTable="MaNoteColumn" msprop:Generator_UserColumnName="MaNote" type="xs:string" minOccurs="0" />
+              <xs:element name="TieuDe" msprop:Generator_ColumnVarNameInTable="columnTieuDe" msprop:Generator_ColumnPropNameInRow="TieuDe" msprop:Generator_ColumnPropNameInTable="TieuDeColumn" msprop:Generator_UserColumnName="TieuDe" type="xs:string" minOccurs="0" />
+              <xs:element name="NoiDung" msprop:Generator_ColumnVarNameInTable="columnNoiDung" msprop:Generator_ColumnPropNameInRow="NoiDung" msprop:Generator_ColumnPropNameInTable="NoiDungColumn" msprop:Generator_UserColumnName="NoiDung" type="xs:string" minOccurs="0" />
+              <xs:element name="LoaiTag" msprop:Generator_ColumnVarNameInTable="columnLoaiTag" msprop:Generator_ColumnPropNameInRow="LoaiTag" msprop:Generator_ColumnPropNameInTable="LoaiTagColumn" msprop:Generator_UserColumnName="LoaiTag" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
     </xs:complexType>
   </xs:element>
 </xs:schema>

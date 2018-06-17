@@ -34,10 +34,10 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -87,6 +87,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(71, 264);
             this.panel1.TabIndex = 3;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(81, 194);
+            this.button4.Margin = new System.Windows.Forms.Padding(2);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(79, 39);
+            this.button4.TabIndex = 5;
+            this.button4.Text = "Open";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // panel2
             // 
@@ -139,17 +150,6 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "_";
             this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(81, 194);
-            this.button4.Margin = new System.Windows.Forms.Padding(2);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(79, 39);
-            this.button4.TabIndex = 5;
-            this.button4.Text = "Open";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // fMenu
             // 

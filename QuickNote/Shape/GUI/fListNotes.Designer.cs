@@ -39,6 +39,12 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.btn_Exit = new System.Windows.Forms.Label();
+            this.btn_Them = new System.Windows.Forms.Button();
+            this.btn_Sua = new System.Windows.Forms.Button();
+            this.btn_Xoa = new System.Windows.Forms.Button();
+            this.txt_Tag = new System.Windows.Forms.TextBox();
+            this.lb_Tag = new System.Windows.Forms.Label();
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // button2
@@ -59,14 +65,15 @@
             // 
             this.listTagNote.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listTagNote.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1});
+            this.columnHeader1,
+            this.columnHeader2});
             this.listTagNote.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listTagNote.GridLines = true;
             this.listTagNote.LargeImageList = this.Tag;
             this.listTagNote.Location = new System.Drawing.Point(17, 56);
             this.listTagNote.Margin = new System.Windows.Forms.Padding(2);
             this.listTagNote.Name = "listTagNote";
-            this.listTagNote.Size = new System.Drawing.Size(224, 279);
+            this.listTagNote.Size = new System.Drawing.Size(240, 279);
             this.listTagNote.SmallImageList = this.Tag;
             this.listTagNote.TabIndex = 2;
             this.listTagNote.UseCompatibleStateImageBehavior = false;
@@ -76,7 +83,8 @@
             // 
             // columnHeader1
             // 
-            this.columnHeader1.Width = 200;
+            this.columnHeader1.Text = "Tên Tag";
+            this.columnHeader1.Width = 50;
             // 
             // Tag
             // 
@@ -146,11 +154,68 @@
             this.btn_Exit.Text = "x";
             this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click);
             // 
+            // btn_Them
+            // 
+            this.btn_Them.Location = new System.Drawing.Point(262, 56);
+            this.btn_Them.Name = "btn_Them";
+            this.btn_Them.Size = new System.Drawing.Size(84, 40);
+            this.btn_Them.TabIndex = 11;
+            this.btn_Them.Text = "Thêm";
+            this.btn_Them.UseVisualStyleBackColor = true;
+            this.btn_Them.Click += new System.EventHandler(this.btn_Them_Click);
+            // 
+            // btn_Sua
+            // 
+            this.btn_Sua.Location = new System.Drawing.Point(262, 102);
+            this.btn_Sua.Name = "btn_Sua";
+            this.btn_Sua.Size = new System.Drawing.Size(84, 40);
+            this.btn_Sua.TabIndex = 12;
+            this.btn_Sua.Text = "Sửa";
+            this.btn_Sua.UseVisualStyleBackColor = true;
+            this.btn_Sua.Click += new System.EventHandler(this.btn_Sua_Click);
+            // 
+            // btn_Xoa
+            // 
+            this.btn_Xoa.Location = new System.Drawing.Point(262, 148);
+            this.btn_Xoa.Name = "btn_Xoa";
+            this.btn_Xoa.Size = new System.Drawing.Size(84, 40);
+            this.btn_Xoa.TabIndex = 13;
+            this.btn_Xoa.Text = "Xóa";
+            this.btn_Xoa.UseVisualStyleBackColor = true;
+            this.btn_Xoa.Click += new System.EventHandler(this.btn_Xoa_Click);
+            // 
+            // txt_Tag
+            // 
+            this.txt_Tag.Location = new System.Drawing.Point(404, 77);
+            this.txt_Tag.Name = "txt_Tag";
+            this.txt_Tag.Size = new System.Drawing.Size(116, 20);
+            this.txt_Tag.TabIndex = 14;
+            // 
+            // lb_Tag
+            // 
+            this.lb_Tag.AutoSize = true;
+            this.lb_Tag.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_Tag.Location = new System.Drawing.Point(352, 72);
+            this.lb_Tag.Name = "lb_Tag";
+            this.lb_Tag.Size = new System.Drawing.Size(43, 24);
+            this.lb_Tag.TabIndex = 15;
+            this.lb_Tag.Text = "Tag";
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Số Lượng Notes";
+            this.columnHeader2.Width = 30;
+            // 
             // fListNotes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(532, 349);
+            this.Controls.Add(this.lb_Tag);
+            this.Controls.Add(this.txt_Tag);
+            this.Controls.Add(this.btn_Xoa);
+            this.Controls.Add(this.btn_Sua);
+            this.Controls.Add(this.btn_Them);
             this.Controls.Add(this.btn_Exit);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
@@ -179,5 +244,11 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label btn_Exit;
+        private System.Windows.Forms.Button btn_Them;
+        private System.Windows.Forms.Button btn_Sua;
+        private System.Windows.Forms.Button btn_Xoa;
+        private System.Windows.Forms.TextBox txt_Tag;
+        private System.Windows.Forms.Label lb_Tag;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
     }
 }

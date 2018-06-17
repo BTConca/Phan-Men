@@ -216,7 +216,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(172, 26);
             this.panel3.TabIndex = 8;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // lbTenTag
             // 
@@ -228,7 +227,6 @@
             this.lbTenTag.Name = "lbTenTag";
             this.lbTenTag.Size = new System.Drawing.Size(134, 16);
             this.lbTenTag.TabIndex = 0;
-            this.lbTenTag.TextChanged += new System.EventHandler(this.tagNote);
             // 
             // textBox2
             // 
@@ -244,7 +242,6 @@
             this.textBox2.Size = new System.Drawing.Size(39, 19);
             this.textBox2.TabIndex = 1;
             this.textBox2.Text = "Tag:";
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged_1);
             // 
             // lbl_date
             // 
@@ -257,7 +254,6 @@
             this.lbl_date.Size = new System.Drawing.Size(30, 13);
             this.lbl_date.TabIndex = 5;
             this.lbl_date.Text = "Date";
-            this.lbl_date.Click += new System.EventHandler(this.lbl_date_Click);
             // 
             // txt_note
             // 
@@ -272,7 +268,6 @@
             this.txt_note.Size = new System.Drawing.Size(285, 196);
             this.txt_note.TabIndex = 0;
             this.txt_note.Text = "";
-            this.txt_note.TextChanged += new System.EventHandler(this.txt_note_TextChanged);
             // 
             // note_model
             // 

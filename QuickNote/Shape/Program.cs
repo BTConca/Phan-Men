@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 using Shape.GUI;
-using Shape.MO;
+using Shape.DTO;
 
 namespace Shape
 {

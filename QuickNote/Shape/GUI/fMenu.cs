@@ -1,7 +1,7 @@
 ﻿using Shape.GUI;
 using System;
 using System.Windows.Forms;
-using Shape.MO;
+using Shape.DTO;
 
 namespace Shape.GUI
 {
@@ -34,9 +34,11 @@ namespace Shape.GUI
 
         private void NewNote_Click(object sender, EventArgs e)
         {
-            fNote newnote = new fNote(0);
+            fListNotes list = new fListNotes();
+            list.Click_ListNotes(null, null);
+           
+            list.Show();
 
-            newnote.Show();
         }
 
         private void panel2_MouseDown(object sender, MouseEventArgs e)

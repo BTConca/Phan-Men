@@ -1,5 +1,6 @@
 ﻿using System;
-using Shape.MO;
+using Shape.DTO;
+using Shape.BUS;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,7 +17,7 @@ namespace Shape.GUI
         int MaxValX;
         int MaxValY;
         int oder;
-        string _path;
+        Note _note = null;
         public fNote(int x)
         {
             InitializeComponent();
@@ -24,12 +25,11 @@ namespace Shape.GUI
 
 
         }
-        public fNote(int x,string path)
+        public fNote(int x,Note item)
         {
             InitializeComponent();
             oder = x;
-            _path = path;
-
+            _note = item;
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -74,23 +74,12 @@ namespace Shape.GUI
                 readNote();
             }else if(oder == 2)
             {
-                readNote(_path);
+                readNote("open");
             }
         }
 
         string filename = "";
 
-        private void FileName()
-        {
-            string [] item = lbl_date.Text.Split('/',':',' ');
-            foreach(string a in item)
-            {
-                if (a == "")
-                    filename = string.Concat(filename, ".At");
-                else
-                    filename = string.Concat(filename,".", a);
-            }
-        }
 
         string currentDirectory = Environment.CurrentDirectory;
         private void createFile(string name)
@@ -115,6 +104,11 @@ namespace Shape.GUI
 
         OpenFileDialog ofd = new OpenFileDialog();
         
+        public void SaveFile()
+        {
+
+        }
+
         public void readNote()
         {
             ofd.InitialDirectory = Path.Combine(currentDirectory, "Data");
@@ -127,11 +121,12 @@ namespace Shape.GUI
                 FontStyle style;
                 ofd.Filter = "TXT | *.txt";
                 sr = new StreamReader(ofd.FileName);
+                
                 text = sr.ReadToEnd();
                 txt_note.Text = text;
                 string lastFolderName = Path.GetFileName(Path.GetDirectoryName(ofd.FileName));
                 lbTenTag.Text = lastFolderName;
-
+                //_path = ofd.FileName;
                 string path_tieuDe = Path.GetFileName(ofd.FileName);
                 string tieuDe = path_tieuDe.Substring(0, path_tieuDe.Length - 4);
                 txt_TieuDe.Text = tieuDe;
@@ -139,22 +134,43 @@ namespace Shape.GUI
                 sr.Close();
             }
         }
-         public void readNote(string path)
+         public void readNote(string oder)
         {
-            sr = new StreamReader(path);
-            string text = sr.ReadToEnd();
-            txt_note.Text = text;
-            string lastFolderName = Path.GetFileName(Path.GetDirectoryName(path));
-            lbTenTag.Text = lastFolderName;
-            string path_tieuDe = Path.GetFileName(path);
-            string tieuDe = path_tieuDe.Substring(0, path_tieuDe.Length - 4);
-            txt_TieuDe.Text = tieuDe;
+
+            txt_note.Text = _note._noiDung ;         
+            lbTenTag.Text = _note._loaiTag;
+            txt_TieuDe.Text = _note._tieuDe;
+        }
+
+        private void SaveNote()
+        {
+            Note mNote = new Note();
+            //mNote.SaveNote(_path,txt_note.Text);
         }
         private void label1_Click(object sender, EventArgs e)
         {
+            NoteBUS noteBUS = new NoteBUS();
+         
+            Note addNote = new Note();
+            addNote._thoiGianTao = System.DateTime.Now.ToLocalTime().Date ;
+            addNote._tieuDe = txt_TieuDe.Text;
+            addNote._noiDung = txt_note.Text;
+            addNote._loaiTag = lbTenTag.Text;
 
-            string name = txt_TieuDe.Text;
-            createFile(name);
+            addNote._font = "None";
+            addNote._path = null;
+            
+            noteBUS.ThemNote(addNote);
+
+            if (oder == 0)
+            {
+                string name = txt_TieuDe.Text;
+                createFile(name);
+            }
+            else
+            {
+                SaveNote();
+            }
 
             this.Close();
         }
@@ -181,19 +197,6 @@ namespace Shape.GUI
             lbl_date.Text =System.DateTime.Now.ToLocalTime().ToString("dd/MM/yyyy  hh:mm:ss tt");
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void txt_note_TextChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void lbl_date_Click(object sender, EventArgs e)
-        {
-
-        }
-
 
 
 
@@ -218,33 +221,6 @@ namespace Shape.GUI
             }
         }
 
-
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tagNote(object sender, EventArgs e)
-        {
-            
-        }
-
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
-        {
-
-        }
 
         private void btnChonTag_Click(object sender, EventArgs e)
         {

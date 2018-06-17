@@ -7,6 +7,8 @@ using System.Text;
 using System.Windows.Forms;
 using System.IO;
 using Shape.GUI;
+using Shape.BUS;
+using Shape.DTO;
 
 namespace Shape.GUI
 {
@@ -22,6 +24,7 @@ namespace Shape.GUI
 
         ImageList imgListSmall;
 
+        string _currentDirectory = Environment.CurrentDirectory;
         private void LoadImageList()
         {
             imgListSmall = new ImageList()
@@ -45,49 +48,37 @@ namespace Shape.GUI
         }
 
         string currentDirectory = Environment.CurrentDirectory;
+
         ListViewItem mtag;
+        
         private void LoadTags(int a)
         {
-            
-            int numNotes = 0;
-            string textnumNotes = null;
-            LoadImageList();
-            listTagNote.SmallImageList = imgListSmall;
-            string path = String.Concat(currentDirectory, "\\Data\\");
-            string[] tags;
-            string[] notes;
-            string notepath;
-            tags = Directory.GetDirectories(path);
-            listTagNote.Clear();
-            
-            foreach (string item in tags)
-            {
-                mtag = new ListViewItem();
+            listTagNote.Items.Clear();
 
-              
-               mtag.Tag = new FileInfo(item).FullName;
-               if (a == 1)
-               {
-                   mtag.Text = Path.GetFileName(item);
-                   string temp = String.Concat(item,"\\");
-                   numNotes = Count(temp);
-                   textnumNotes = Convert.ToString(numNotes);
-                   mtag.Text = string.Concat(mtag.Text, " Số lượng:", textnumNotes);
-               }
-               else
-               {
-                   notepath = String.Concat(item, "\\");
-                   notes = Directory.GetFiles(notepath);
-                   
-                   foreach (string note in notes)
-                   {
-                       mtag.Text = Path.GetFileName(note);
-                   }
-                   
-               }
-                listTagNote.Items.Add(mtag);
-                mtag.ImageIndex++;
-               
+            NoteBUS noteBUS = new NoteBUS();
+         
+            int j = 0;
+            ListViewItem item = null;
+            DataTable data = noteBUS.LayDanhSachNote();
+            LoadImageList();
+            Note temp = new Note() ;
+            listTagNote.SmallImageList = imgListSmall;
+            foreach (DataRow row in data.Rows)
+            {
+                
+                    temp._maNote = int.Parse(row[0].ToString());
+                    temp._tieuDe = row[1].ToString();
+                    temp._noiDung = row[2].ToString();
+                    temp._loaiTag = row[4].ToString();
+                
+                if (a == 1)
+                    item = new ListViewItem(row[4].ToString());
+                else if (a == 0)
+                    item = new ListViewItem(row[1].ToString());
+                item.Tag = temp;
+                listTagNote.Items.Add(item);
+                item.ImageIndex++;
+                j++;
             }
         }
 
@@ -100,7 +91,7 @@ namespace Shape.GUI
 
         }
 
-        private void Click_ListNotes(object sender, EventArgs e)
+        public void Click_ListNotes(object sender, EventArgs e)
         {
             LoadTags(0);
         }
@@ -108,45 +99,21 @@ namespace Shape.GUI
         private void click_ListTags(object sender, EventArgs e)
         {
             LoadTags(1);
+         
         }
 
 
         
         private void listTagNote_DoubleClick(object sender, EventArgs e)
         {
-            mtag = new ListViewItem();
-            string selectedFile = listTagNote.SelectedItems[0].Text;
-            string[] notes;
-            string tag = (string)listTagNote.SelectedItems[0].Tag;
-
-            string notepath = String.Concat(tag, "\\");
-            string path = Path.Combine(tag, selectedFile);
-            if (File.Exists(path))
-            {
-                try
-                {
-                    fNote opf = new fNote(2, path);
-                    opf.Show();
-                }
-                catch (Exception ex)
-                {
-                    throw ex;
-                }
-            }
-            else if(Directory.Exists(notepath))
-            {
-                listTagNote.Clear();
-                notes = Directory.GetFiles(notepath);
-                foreach (string note in notes)
-                {
-                    mtag.Text = Path.GetFileName(note);
-                    mtag.Tag = new FileInfo(tag).FullName;
-                    
-                    listTagNote.Items.Add((ListViewItem)mtag.Clone());
-                    mtag.ImageIndex++;
-                }
-            }
+            NoteBUS noteBUS = new NoteBUS();
+            DataTable data = noteBUS.LayDanhSachNote();
             
+
+            Note note = (Note)listTagNote.SelectedItems[0].Tag;
+          
+            fNote newnote = new fNote(2,note);
+            newnote.Show();
 
         }
 
@@ -154,5 +121,24 @@ namespace Shape.GUI
         {
             this.Close();
         }
+
+        private void btn_Them_Click(object sender, EventArgs e)
+        {
+
+           
+        }
+
+        private void btn_Xoa_Click(object sender, EventArgs e)
+        {
+
+
+        }
+
+        private void btn_Sua_Click(object sender, EventArgs e)
+        {
+
+           
+
+        }       
     }
 }
